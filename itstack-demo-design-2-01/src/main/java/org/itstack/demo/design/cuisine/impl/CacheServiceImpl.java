@@ -7,6 +7,9 @@ import org.itstack.demo.design.CacheService;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 根据类型判断是哪个Redis集群，从而实现对应的实现类调用
+ */
 public class CacheServiceImpl implements CacheService {
 
     private RedisUtils redisUtils = new RedisUtils();
