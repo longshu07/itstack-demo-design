@@ -69,6 +69,9 @@
         <module>itstack-demo-design-22-00</module>
         <module>itstack-demo-design-1-02-fatory-model-longshu</module>
         <module>itstack-demo-design-2-02-abstract-factory-longshu</module>
+        <module>itstack-demo-design-3-02-builder-longshu</module>
+        <module>itstack-demo-design-4-02-prototype-longshu</module>
+        <module>itstack-demo-design-5-00-singleton-longshu</module>
     </modules>
 
     <dependencies>

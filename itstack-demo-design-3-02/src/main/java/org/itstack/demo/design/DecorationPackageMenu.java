@@ -23,30 +23,35 @@ public class DecorationPackageMenu implements IMenu {
         this.grade = grade;
     }
 
+    @Override
     public IMenu appendCeiling(Matter matter) {
         list.add(matter);
         price = price.add(area.multiply(new BigDecimal("0.2")).multiply(matter.price()));
         return this;
     }
 
+    @Override
     public IMenu appendCoat(Matter matter) {
         list.add(matter);
         price = price.add(area.multiply(new BigDecimal("1.4")).multiply(matter.price()));
         return this;
     }
 
+    @Override
     public IMenu appendFloor(Matter matter) {
         list.add(matter);
         price = price.add(area.multiply(matter.price()));
         return this;
     }
 
+    @Override
     public IMenu appendTile(Matter matter) {
         list.add(matter);
         price = price.add(area.multiply(matter.price()));
         return this;
     }
 
+    @Override
     public String getDetail() {
 
         StringBuilder detail = new StringBuilder("\r\n-------------------------------------------------------\r\n" +
