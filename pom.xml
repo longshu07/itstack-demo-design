@@ -72,6 +72,7 @@
         <module>itstack-demo-design-3-02-builder-longshu</module>
         <module>itstack-demo-design-4-02-prototype-longshu</module>
         <module>itstack-demo-design-5-00-singleton-longshu</module>
+        <module>itstack-demo-design-6-02-Adaptor-longshu</module>
     </modules>
 
     <dependencies>

@@ -5,9 +5,9 @@ import com.alibaba.fastjson.JSON;
 import java.util.Date;
 
 /**
- * 开户
+ * 注册开户mq
  */
-public class create_account {
+public class createAccountMq {
 
     private String number;      // 开户编号
     private String address;     // 开户地

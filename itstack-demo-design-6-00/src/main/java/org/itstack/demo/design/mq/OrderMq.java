@@ -4,6 +4,10 @@ import com.alibaba.fastjson.JSON;
 
 import java.util.Date;
 
+/**
+ * 内部订单mq
+ * @author longshu
+ */
 public class OrderMq {
 
     private String uid;           // 用户ID

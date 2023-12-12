@@ -1,11 +1,11 @@
-package org.itstack.demo.design.test;
+package adapter.test;
 
+import adapter.MqAdapter;
+import adapter.dto.RebateInfo;
+import adapter.service.OrderAdapterService;
+import adapter.service.impl.InsideOrderAdapterServiceImpl;
+import adapter.service.impl.POPOrderAdapterServiceImpl;
 import com.alibaba.fastjson.JSON;
-import org.itstack.demo.design.MQAdapter;
-import org.itstack.demo.design.OrderAdapterService;
-import org.itstack.demo.design.RebateInfo;
-import org.itstack.demo.design.cuisine.impl.InsideOrderService;
-import org.itstack.demo.design.cuisine.impl.POPOrderAdapterServiceImpl;
 import org.itstack.demo.design.mq.OrderMq;
 import org.itstack.demo.design.mq.createAccountMq;
 import org.junit.Test;
@@ -17,17 +17,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class ApiTest {
-
-    /**
-     * mq接收消息适配
-     * @throws NoSuchMethodException
-     * @throws IllegalAccessException
-     * @throws InvocationTargetException
-     * @throws ParseException
-     */
     @Test
-    public void test_MQAdapter() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, ParseException {
-
+    public void testMqAdapter() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException, ParseException {
         SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date parse = s.parse("2020-06-01 23:20:16");
 
@@ -38,12 +29,12 @@ public class ApiTest {
         createAccountMq.setAccountDate(parse);
         createAccountMq.setDesc("在校开户");
 
-        HashMap<String, String> link01 = new HashMap<String, String>();
-        link01.put("userId", "number");
-        link01.put("bizId", "number");
-        link01.put("bizTime", "accountDate");
-        link01.put("desc", "desc");
-        RebateInfo rebateInfo01 = MQAdapter.filter(createAccountMq.toString(), link01);
+        HashMap<String, Object> transformationMap01 = new HashMap<String, Object>();
+        transformationMap01.put("userId", "number");
+        transformationMap01.put("bizId", "number");
+        transformationMap01.put("bizTime", "accountDate");
+        transformationMap01.put("desc", "desc");
+        RebateInfo rebateInfo01 = MqAdapter.convertToRebateInfo(createAccountMq.toString(), transformationMap01);
         System.out.println("mq.create_account(适配前)" + createAccountMq.toString());
         System.out.println("mq.create_account(适配后)" + JSON.toJSONString(rebateInfo01));
 
@@ -55,22 +46,26 @@ public class ApiTest {
         orderMq.setOrderId("100000890193847111");
         orderMq.setCreateOrderTime(parse);
 
-        HashMap<String, String> link02 = new HashMap<String, String>();
-        link02.put("userId", "uid");
-        link02.put("bizId", "orderId");
-        link02.put("bizTime", "createOrderTime");
-        RebateInfo rebateInfo02 = MQAdapter.filter(orderMq.toString(), link02);
+        HashMap<String, Object> transformationMap02 = new HashMap<String, Object>();
+        transformationMap02.put("userId", "uid");
+        transformationMap02.put("bizId", "orderId");
+        transformationMap02.put("bizTime", "createOrderTime");
+        RebateInfo rebateInfo02 = MqAdapter.convertToRebateInfo(orderMq.toString(), transformationMap02);
         System.out.println("mq.orderMq(适配前)" + orderMq.toString());
         System.out.println("mq.orderMq(适配后)" + JSON.toJSONString(rebateInfo02));
+
     }
 
+    /**
+     * 接口适配
+     */
     @Test
-    public void test_itfAdapter() {
+    public void testInterfaceAdapter() {
         OrderAdapterService popOrderAdapterService = new POPOrderAdapterServiceImpl();
         System.out.println("判断首单，接口适配(POP)：" + popOrderAdapterService.isFirst("100001"));
 
-        OrderAdapterService insideOrderService = new InsideOrderService();
-        System.out.println("判断首单，接口适配(自营)：" + insideOrderService.isFirst("100001"));
+        OrderAdapterService insideOrderAdapterService = new InsideOrderAdapterServiceImpl();
+        System.out.println("判断首单，接口适配(自营)：" + insideOrderAdapterService.isFirst("100001"));
     }
 
 }

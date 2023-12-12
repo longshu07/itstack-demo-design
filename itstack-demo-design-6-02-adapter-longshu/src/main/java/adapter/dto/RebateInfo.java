@@ -1,17 +1,32 @@
-package org.itstack.demo.design;
+package adapter.dto;
 
 import java.util.Date;
 
 /**
- * 统一消息体
+ * 统一mq消息类
+ * mq接受到消息后，通过转换为当前业务统一的消息体，便于统一处理
  * @author longshu
  */
 public class RebateInfo {
+    /**
+     * 用户ID
+     */
+    private String userId;
 
-    private String userId;  // 用户ID
-    private String bizId;   // 业务ID
-    private Date bizTime;   // 业务时间
-    private String desc;    // 业务描述
+    /**
+     * 业务ID
+     */
+    private String bizId;
+
+    /**
+     * 业务时间
+     */
+    private Date bizTime;
+
+    /**
+     * 业务描述
+     */
+    private String desc;
 
     public String getUserId() {
         return userId;
@@ -36,9 +51,8 @@ public class RebateInfo {
     public void setBizTime(Date bizTime) {
         this.bizTime = bizTime;
     }
-
     public void setBizTime(String bizTime) {
-        this.bizTime = new Date(Long.parseLong("1591077840669"));
+        this.bizTime = new Date(Long.parseLong(bizTime));
     }
 
     public String getDesc() {

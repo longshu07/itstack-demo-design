@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 订单妥投消息
+ * 第三方订单消息投递mq
  */
-public class POPOrderDelivered {
+public class POPOrderDeliveredMq {
 
     private String uId;     // 用户ID
     private String orderId; // 订单号
