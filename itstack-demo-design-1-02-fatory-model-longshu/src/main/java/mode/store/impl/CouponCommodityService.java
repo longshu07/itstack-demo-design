@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * 优惠券
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class CouponCommodityService implements ICommodity {
 

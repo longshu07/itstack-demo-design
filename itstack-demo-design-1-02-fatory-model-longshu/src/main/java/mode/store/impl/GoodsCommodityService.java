@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * 实体货物
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class GoodsCommodityService implements ICommodity {
 

@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 缓存通用接口
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public interface ICacheService {
     String get(final String key);

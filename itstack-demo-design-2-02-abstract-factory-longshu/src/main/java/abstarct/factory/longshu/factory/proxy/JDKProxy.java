@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
 /**
  * 抽象⼯程代理类
  *主要的作⽤：完成代理类，同时对于使⽤哪个集群有外部通过⼊参进⾏传递
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class JDKProxy {
     /**

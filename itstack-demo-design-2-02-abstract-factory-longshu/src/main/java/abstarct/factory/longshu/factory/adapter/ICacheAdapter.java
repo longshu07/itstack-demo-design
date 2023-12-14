@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  * 缓存适配器接口。
  * 主要作⽤：是让所有集群的提供⽅，能在统⼀的⽅法名称下进⾏操作
  *
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public interface ICacheAdapter {
     String get(String key);

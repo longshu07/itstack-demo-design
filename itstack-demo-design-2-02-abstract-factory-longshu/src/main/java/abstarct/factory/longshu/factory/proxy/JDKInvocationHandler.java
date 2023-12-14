@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  * 在代理类的实现中，通过穿透进来的集群服务进⾏⽅法操作。
  * 另外在 invoke 中通过使⽤获取⽅法名称反射⽅式，调⽤对应的⽅法功能，也就简化了整体的使
  * ⽤
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class JDKInvocationHandler implements InvocationHandler {
 

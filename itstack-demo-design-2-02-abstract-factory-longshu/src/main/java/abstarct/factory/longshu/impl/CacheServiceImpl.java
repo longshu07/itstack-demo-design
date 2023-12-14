@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 业务代码最开始的原有的缓存实现
  *
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class CacheServiceImpl implements ICacheService {
     /**

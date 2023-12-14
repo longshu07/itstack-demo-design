@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * 兑换卡实现类
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class CardCommodityService implements ICommodity {
 

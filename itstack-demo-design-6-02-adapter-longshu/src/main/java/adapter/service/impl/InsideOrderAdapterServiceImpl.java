@@ -5,7 +5,7 @@ import org.itstack.demo.design.service.OrderService;
 
 /**
  * 内部订单服务类
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class InsideOrderAdapterServiceImpl implements OrderAdapterService {
     private OrderService orderService = new OrderService();

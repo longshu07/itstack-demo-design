@@ -19,7 +19,7 @@ public class MqAdapter {
      * @return
      */
     public static RebateInfo convertToRebateInfo(String originJsonString, Map<String, Object> transformationMap) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
-        return convertToRebateInfo(JSON.parseObject(originJsonString, Map.class), transformationMap);
+        return convertToRebateInfo(JSON.parseObject(originJsonString, Map.class)  , transformationMap);
     }
 
     public static RebateInfo convertToRebateInfo(Map<Object, Object> originJsonMap, Map<String, Object> transformationMap) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {

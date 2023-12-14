@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  * 主题基类
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 
 public class Topic {

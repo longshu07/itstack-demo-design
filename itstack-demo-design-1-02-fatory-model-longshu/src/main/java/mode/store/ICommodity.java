@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  * 抽象商品接口
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public interface ICommodity {
     /**

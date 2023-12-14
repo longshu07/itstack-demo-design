@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 集群2的缓存适配器实现类
  * 作用：在统⼀⽅法名下进⾏包装
- * @author yifeiwifelongshu
+ * @author  longshu
  */
 public class IIRCacheAdapter implements ICacheAdapter {
     private IIR iir = new IIR();
