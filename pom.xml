@@ -74,6 +74,7 @@
         <module>itstack-demo-design-5-00-singleton-longshu</module>
         <module>itstack-demo-design-6-02-adapter-longshu</module>
         <module>itstack-demo-design-7-02-Bridging-longshu</module>
+        <module>itstack-demo-design-8-02-composite-longshu</module>
     </modules>
 
     <dependencies>
