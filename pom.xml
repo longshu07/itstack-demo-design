@@ -76,6 +76,7 @@
         <module>itstack-demo-design-7-02-Bridging-longshu</module>
         <module>itstack-demo-design-8-02-composite-longshu</module>
         <module>itstack-demo-design-9-02-decorator-longshu</module>
+        <module>itstack-demo-design-10-02-appearance-longshu</module>
     </modules>
 
     <dependencies>
